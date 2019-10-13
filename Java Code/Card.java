@@ -3,7 +3,7 @@ public class Card//Payment of charges and confirmation of user to be done here
     protected int cardNumber;//stores the card number
     public    int cvv;//storess the cvv number
     protected boolean isCreditCard;
-    Bank bank; 
+    public Bank bank; 
 
     Card(){}
 

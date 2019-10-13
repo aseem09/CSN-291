@@ -1,7 +1,7 @@
 class Database
 {
     public static Train trains[] = new Train[10000];
-    int count =0 ;
+    public int count =0 ;
     
     public Train searchTrain(int trainNumber)
     {

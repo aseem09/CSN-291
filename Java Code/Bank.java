@@ -1,19 +1,26 @@
 public class Bank//All the ops related to bank
 {
-	
-public String bankName;//bankname to be stored
+	//bankname to be stored
+	public String bankName;
 
+	Bank(){}
+	
 	Bank(String bankName){
 		this.bankName = bankName;
 	}
-	protected void debitFare(int fare)//takes input the fare and pass it to for payment
+
+	//takes input the fare and pass it to for payment
+	protected void debitFare(int fare)
 	{
 		//object created of class Card to access its functions
 		Card card = new Card(this,11223344,000, true);
-        card.debitAmount(fare,bankName);//calling function which prompt card deatils and confirmation from bank
+		//calling function which prompt card deatils and confirmation from bank
+        card.debitAmount(fare,bankName);
      	
 	}
-	protected boolean paymentConfirm()//this will be directed from class Card for payment confirmation through gateway
+
+	//this will be directed from class Card for payment confirmation through gateway
+	protected boolean paymentConfirm()
 	{
 		int signal = 1;
 		//if payment is made successfully signal 1

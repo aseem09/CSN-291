@@ -6,6 +6,8 @@ class Passenger{
 	public String address;
 	public int phoneNo;
 
+	Passenger(){}
+	
 	public Reservation reservation(Database db, Train t1,Bank bank){
 		
 		Reservation reservation = new Reservation(false, t1.trainNumber);
