@@ -1,8 +1,10 @@
-public class Reservation extends Passenger {
+public class Reservation {
 	
 	public boolean statusConfirmed;   // Ticket confirmed or waiting
     public int trainNumber;           //Train number
     public Ticket ticket;             //train object
+
+    Reservation(){}
 
     Reservation(boolean statusConfirmed, int trainNumber){
         this.trainNumber = trainNumber;
@@ -11,27 +13,25 @@ public class Reservation extends Passenger {
         
     //function to display the information of ticket
     public void displayInfo() {
-         System.out.println("The status of ticket is: ");
+         System.out.print("The status of ticket is: ");
          if(statusConfirmed){
          	System.out.print("Confirmed");
          }         
          else{
          	System.out.print("Waiting");
          }
-         System.out.println("Train number: " + Integer.toString(trainNumber));
+         System.out.print("\n");
+         System.out.println("Train number: " + Integer.toString(trainNumber) + "\n");
      }
 
     //function to check availability of ticket
-    public boolean checkAvailability(Train t){
-            //creates a database object to check availability
-    	    Database databaseObject = new Database();
-    	    boolean isAvailable = databaseObject.checkAvailible(t);  //true if a seat is available
+    public boolean checkAvailability(Database db ,Train t){
+    	    boolean isAvailable = db.checkAvailiblity(t);  //true if a seat is available
     	    return isAvailable;
     }
     
     //executed on cancellation of ticket.Calculates the amount to be refunded
     public int refundAmount(){
-
     	int refundAmount = ticket.fare;
     	return refundAmount; 
     }

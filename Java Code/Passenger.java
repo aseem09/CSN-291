@@ -6,35 +6,33 @@ class Passenger{
 	public String address;
 	public int phoneNo;
 
-	public Ticket reservation(Train t1, String seatClass){
-		Reservation reservation = new Reservation(false,t1.trainNumber);
+	public Ticket reservation(Database db, Reservation reservation, Train t1,Bank bank){
+		
+		reservation = new Reservation(false, t1.trainNumber);
 
 		Ticket ticket = new Ticket();
 		ticket.fare = reservation.getFare(t1);
-		//ticket.dateOfJourney = t1.dateOfJourney;
+		ticket.dateOfJourney =  t1.date;
 		ticket.id = t1.trainNumber;
 		ticket.isConfirmed = reservation.statusConfirmed;
-		ticket.seatClass = seatClass;
 		ticket.timeOfJourney = t1.departureTime;
 		reservation.ticket = ticket;
 
-		Bank bank = new Bank();
 		makePayment(bank, reservation.getFare(t1));
 
-		reservation.statusConfirmed = reservation.checkAvailability(t1);
+		if(reservation.checkAvailability(db,t1)){
+			reservation.statusConfirmed = true;
+		}
 		reservation.displayInfo();
-
+		ticket.printTicket();
 		return reservation.ticket;
 	}
 	public void cancellation(Reservation r1){
 		r1.cancelReservation();
 	}
-	public Train searchTrain(Train t1){
-		Database db= new Database();
-		return db.searchTrain(t1.trainNumber);
-		
+	public Train searchTrain(Database db,int trainNumber){
+		return db.searchTrain(trainNumber);	
 	}
-
 	protected void makePayment(Bank bank,int fare){
 		bank.debitFare(fare);
 	}
