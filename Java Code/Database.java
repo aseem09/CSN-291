@@ -5,6 +5,7 @@ class Database
     
     public Train searchTrain(int trainNumber)
     {
+        System.out.println("******SEARCH RESULTS******");
         for(int i = 0; i < trains.length; i++)
         {
             if(trains[i].trainNumber == trainNumber)
