@@ -14,7 +14,7 @@ public class Ticket {
   	 System.out.println("Date of Journey : " + dateOfJourney);
   	 System.out.println("Time of Journey : " + timeOfJourney);
   	 String status = (isConfirmed)?"Confirmed":"Waiting";
-  	 System.out.println("Confirmation status : " + status);
+  	 System.out.println("Confirmation status : " + status + "\n");
   }
 }
 
