@@ -3,6 +3,9 @@ public class Bank//All the ops related to bank
 	
 public String bankName;//bankname to be stored
 
+	Bank(String bankName){
+		this.bankName = bankName;
+	}
 	protected void debitFare(int fare)//takes input the fare and pass it to for payment
 	{
 		//object created of class Card to access its functions

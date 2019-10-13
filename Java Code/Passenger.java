@@ -10,6 +10,12 @@ class Passenger{
 		
 		reservation = new Reservation(false, t1.trainNumber);
 
+		makePayment(bank, reservation.getFare(t1));
+
+		if(reservation.checkAvailability(db,t1)){
+			reservation.statusConfirmed = true;
+		}
+
 		Ticket ticket = new Ticket();
 		ticket.fare = reservation.getFare(t1);
 		ticket.dateOfJourney =  t1.date;
@@ -18,11 +24,6 @@ class Passenger{
 		ticket.timeOfJourney = t1.departureTime;
 		reservation.ticket = ticket;
 
-		makePayment(bank, reservation.getFare(t1));
-
-		if(reservation.checkAvailability(db,t1)){
-			reservation.statusConfirmed = true;
-		}
 		reservation.displayInfo();
 		ticket.printTicket();
 		return reservation.ticket;

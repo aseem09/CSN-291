@@ -9,6 +9,8 @@ public class Card//Payment of charges and confirmation of user to be done here
       {
         //You will be directed to bank server for the card details entered
         boolean temp= bank.paymentConfirm();//payment confirmation 
+          System.out.println("******PAYMENT DETAILS******");
+          System.out.println("Bank Name: "+ bankName);
  	      if(temp != true)
  	  	    System.out.println("Payment Unsuccessful\n");
  	      else

@@ -13,6 +13,7 @@ public class Reservation {
         
     //function to display the information of ticket
     public void displayInfo() {
+        System.out.println("******RESERVATION DETAILS******");
          System.out.print("The status of ticket is: ");
          if(statusConfirmed){
          	System.out.print("Confirmed");
