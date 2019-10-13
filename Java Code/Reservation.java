@@ -33,20 +33,20 @@ public class Reservation {
     
     //executed on cancellation of ticket.Calculates the amount to be refunded
     public int refundAmount(){
-    	int refundAmount = ticket.fare;
+    	int refundAmount = this.ticket.fare;
     	return refundAmount; 
     }
     
     //Cancels the reservation
     public void cancelReservation(){
-        refundAmount();
+        System.out.println("******CANCEL RESERVATION******");
+        int amount = refundAmount();
         ticket= null;
+        System.out.println("Refunded Amount: "+ amount);
     }
      
     //Calculates the fare and returns it 
     public int getFare(Train t1){
-        return t1.distance * 1;
+        return (int) Math.floor((double) t1.distance * 0.85);
     }
-
-
 }

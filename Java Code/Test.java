@@ -1,7 +1,7 @@
 public class Test{
-
-    Database db = new Database();
     public static void main(String[] args) {
+
+        System.out.println("\n");
 
         Database db = new Database();
 
@@ -23,9 +23,12 @@ public class Test{
             }
         }
 
-        Reservation r1= new Reservation();
+        
         Bank bank = new Bank("HDFC Bank");
-        Ticket ticket = user.reservation(db,r1, t1, bank);
+        Reservation r1 = user.reservation(db, t1, bank);
 
+        user.cancellation(r1);
+        
+        System.out.println("\n");
     }
 }

@@ -3,14 +3,25 @@ public class Card//Payment of charges and confirmation of user to be done here
     protected int cardNumber;//stores the card number
     public    int cvv;//storess the cvv number
     protected boolean isCreditCard;
-    Bank bank;
+    Bank bank; 
+
+    Card(){}
+
+    Card(Bank bank, int cardNumber, int cvv, boolean isCreditCard){
+      this.cardNumber = cardNumber;
+      this.cvv = cvv;
+      this.isCreditCard = isCreditCard;
+      this.bank = bank;
+    }
  
-    protected void debitAmount(int amount,String bankName)//passes to bank server for payment
+    protected void debitAmount(int amount,String bankName)
       {
-        //You will be directed to bank server for the card details entered
-        boolean temp= bank.paymentConfirm();//payment confirmation 
+        boolean temp= bank.paymentConfirm();
           System.out.println("******PAYMENT DETAILS******");
           System.out.println("Bank Name: "+ bankName);
+          System.out.println("Card No: "+ cardNumber);
+          System.out.println("Amount : "+ amount);
+
  	      if(temp != true)
  	  	    System.out.println("Payment Unsuccessful\n");
  	      else
