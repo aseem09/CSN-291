@@ -9,8 +9,7 @@ public String bankName;//bankname to be stored
 	protected void debitFare(int fare)//takes input the fare and pass it to for payment
 	{
 		//object created of class Card to access its functions
-		Card card = new Card();
-		card.bank = this;
+		Card card = new Card(this,11223344,000, true);
         card.debitAmount(fare,bankName);//calling function which prompt card deatils and confirmation from bank
      	
 	}

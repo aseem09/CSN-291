@@ -6,9 +6,9 @@ class Passenger{
 	public String address;
 	public int phoneNo;
 
-	public Ticket reservation(Database db, Reservation reservation, Train t1,Bank bank){
+	public Reservation reservation(Database db, Train t1,Bank bank){
 		
-		reservation = new Reservation(false, t1.trainNumber);
+		Reservation reservation = new Reservation(false, t1.trainNumber);
 
 		makePayment(bank, reservation.getFare(t1));
 
@@ -26,7 +26,7 @@ class Passenger{
 
 		reservation.displayInfo();
 		ticket.printTicket();
-		return reservation.ticket;
+		return reservation;
 	}
 	public void cancellation(Reservation r1){
 		r1.cancelReservation();
