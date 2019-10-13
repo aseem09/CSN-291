@@ -3,6 +3,8 @@ class Admin extends Passenger{
 	public int id;
 	public String password;
 
+	Admin(){}
+	
 	Admin(int id, String password,String name,int age,String gender,String address,int phoneNo){
 		this.id= id;
 		this.password = password;
@@ -13,7 +15,7 @@ class Admin extends Passenger{
         this.phoneNo= phoneNo;
 	}
 	
-	public void addTrainToDatabase(Database db,Train t1){
-		db.addTrain(t1);
+	public void addTrainToDatabase(Database db,Train train){
+		db.addTrain(train);
 	}
 }

@@ -1,5 +1,5 @@
 public class Reservation {
-	
+    
 	public boolean statusConfirmed;   // Ticket confirmed or waiting
     public int trainNumber;           //Train number
     public Ticket ticket;             //train object
